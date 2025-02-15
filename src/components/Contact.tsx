@@ -42,11 +42,11 @@ export default function Contact() {
           >
             <div className="bg-gray-100/5 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-lg border border-gray-100/10 hover:border-purple-500/30 transition-colors">
               <h3 className={`${playfair.className} text-xl md:text-2xl font-semibold text-purple-400 mb-4 text-center md:text-left`}>
-                Let's Connect
+                Let&apos;s Connect
               </h3>
               <p className="text-gray-300 text-base md:text-lg mb-8 text-center md:text-left">
-                I'm currently open to new opportunities and collaborations. 
-                Feel free to reach out if you'd like to discuss a project or just say hello!
+                I&apos;m currently open to new opportunities and collaborations. 
+                Feel free to reach out if you&apos;d like to discuss a project or just say hello!
               </p>
               
               <div className="space-y-4">
@@ -186,7 +186,7 @@ export default function Contact() {
                 Availability
               </h4>
               <p className="text-gray-300 leading-relaxed text-center md:text-left">
-                I'm currently available for freelance work and full-time positions.
+                I&apos;m currently available for freelance work and full-time positions.
                 <br />
                 <span className="text-purple-400/80">Response time: Within 24 hours</span>
               </p>

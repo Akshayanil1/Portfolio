@@ -1,6 +1,5 @@
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { TypeAnimation } from 'react-type-animation'
 
 export default function Hero() {
@@ -14,7 +13,7 @@ export default function Hero() {
           className="text-center md:text-left"
         >
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Hello, I'm{' '}
+            Hello, I&apos;m{' '}
             <span className="text-purple-400">Akshay Anilkumar</span>,
           </h1>
           <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-6">

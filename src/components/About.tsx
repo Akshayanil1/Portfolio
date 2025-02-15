@@ -126,7 +126,7 @@ export default function About() {
               transition={{ delay: 0.3 }}
               className="text-lg text-gray-300 leading-relaxed bg-gray-100/5 backdrop-blur-sm rounded-xl p-6"
             >
-              I'm passionate about staying at the forefront of technology, with a particular focus on AI 
+              I&apos;m passionate about staying at the forefront of technology, with a particular focus on AI 
               and emerging development tools. My ability to quickly adapt to new technologies and 
               frameworks allows me to bring innovative solutions to complex problems.
             </motion.p>
@@ -141,7 +141,7 @@ export default function About() {
           className="mt-16 text-center"
         >
           <blockquote className={`${playfair.className} text-2xl text-purple-400 italic`}>
-            "Crafting digital experiences that make a difference"
+            &quot;Crafting digital experiences that make a difference&quot;
           </blockquote>
         </motion.div>
       </div>
