@@ -33,7 +33,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               className="text-lg md:text-xl text-gray-300 leading-relaxed"
             >
-              Passionate Full-Stack Developer transitioning from Civil Engineering to IT, 
+              Passionate Full-Stack Developer transitioned from Civil Engineering to IT, 
               specializing in scalable web applications, cloud computing, and AI-driven solutions. 
               Proficient in React.js, Next.js, Node.js, and cloud technologies, I thrive at 
               building high-performance applications with seamless user experiences.
@@ -126,7 +126,7 @@ export default function About() {
               transition={{ delay: 0.3 }}
               className="text-lg text-gray-300 leading-relaxed bg-gray-100/5 backdrop-blur-sm rounded-xl p-6"
             >
-              I&apos;m passionate about staying at the forefront of technology, with a particular focus on AI 
+              I am passionate about staying at the forefront of technology, with a particular focus on AI 
               and emerging development tools. My ability to quickly adapt to new technologies and 
               frameworks allows me to bring innovative solutions to complex problems.
             </motion.p>

@@ -62,25 +62,3 @@ export default function Hero() {
     </section>
   )
 }
-
-interface SocialLinkProps {
-  href: string;
-  icon?: string; // Made optional since it's not used
-  children: React.ReactNode;
-}
-
-const SocialLink = ({ href, children }: SocialLinkProps) => (
-  <motion.a
-    href={href}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-    className="group flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-  >
-    <span className="relative px-5 py-2.5 overflow-hidden font-medium rounded-full">
-      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:translate-x-full"></span>
-      <span className="relative flex items-center gap-2">
-        {children}
-      </span>
-    </span>
-  </motion.a>
-)
