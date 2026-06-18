@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Akshay Anilkumar, a results-driven Frappe / ERPNext Developer and API Integration Specialist. Discover his open source contributions to the Frappe framework, backend integrations, and custom business applications.">
+    <meta name="keywords" content="Akshay Anilkumar, Frappe, ERPNext, Frappe Developer, ERPNext Developer, Python Developer, API Integration, Open Source, Frappe Contributions, Coimbatore">
+    <meta name="author" content="Akshay Anilkumar">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://akshay-anilkumar.vercel.app/">
+    <meta property="og:title" content="Akshay Anilkumar | Frappe & ERPNext Developer">
+    <meta property="og:description" content="Portfolio of Akshay Anilkumar, showing custom business applications, Shopify/Amazon API integrations, and open source contributions to Frappe framework.">
+    <meta property="og:image" content="assets/avatar.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://akshay-anilkumar.vercel.app/">
+    <meta property="twitter:title" content="Akshay Anilkumar | Frappe & ERPNext Developer">
+    <meta property="twitter:description" content="Portfolio of Akshay Anilkumar, showing custom business applications, Shopify/Amazon API integrations, and open source contributions to Frappe framework.">
+    <meta property="twitter:image" content="assets/avatar.jpg">
+
+    <title>Akshay Anilkumar | Frappe & ERPNext Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=VT323&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <!-- Canvas for particle background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="header" id="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#hero">
+                    <span class="logo-accent">&lt;</span>Akshay<span class="logo-accent">.A /&gt;</span>
+                </a>
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero" class="nav-link active" id="nav-hero">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" id="nav-about">About</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link" id="nav-experience">Experience</a></li>
+                    <li class="nav-item"><a href="#contributions" class="nav-link" id="nav-contributions">Open Source</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+                    <li class="nav-item"><a href="#terminal-section" class="nav-link" id="nav-terminal">Terminal</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">
+                    <!-- Moon icon (for dark mode) -->
+                    <svg id="theme-icon-moon" class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <!-- Sun icon (for light mode) -->
+                    <svg id="theme-icon-sun" class="theme-toggle-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-container container">
+                <div class="hero-content">
+                    <div class="glow-tag">
+                        <span class="pulse-dot"></span> Available for Opportunities
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Akshay Anilkumar</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span id="typewriter"></span><span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        Frappe & ERPNext Developer specializing in building custom business applications, scalable API integration layers (Shopify, Amazon SP-API), and database performance tuning. Active contributor to the core Frappe framework.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contributions" class="btn btn-primary" id="btn-view-work">View Contributions</a>
+                        <a href="#contact" class="btn btn-secondary" id="btn-contact-me">Get In Touch</a>
+                        <a href="assets/Akshay_Anilkumar_Resume.pdf" class="btn btn-tertiary" id="btn-download-resume" download>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="avatar-container">
+                        <img src="assets/avatar.jpg" alt="Akshay Anilkumar" class="avatar-img">
+                        <div class="avatar-glow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll to About Section">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About / Profile Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title text-center">About <span class="gradient-text">Me</span></h2>
+                <div class="about-grid">
+                    <div class="about-text-card">
+                        <h3 class="card-subtitle">Developer Profile</h3>
+                        <p class="about-p">
+                            I am a results-driven **Frappe / ERPNext Developer** with over 2 years of project-based experience. I specialize in architecting custom business workflows, engineering robust third-party API integrations, and refactoring backend queries to scale.
+                        </p>
+                        <p class="about-p">
+                            My journey began with a Bachelor's degree in **Civil Engineering**, which instilled in me a strong analytical foundation and problem-solving mindset. Transitioning to software engineering, I have focused heavily on mastering Python, database management, and system optimization to build clean, maintainable codebases.
+                        </p>
+                        <p class="about-p">
+                            I approach software development with an engineering mindset—valuing root cause analysis, modularity, and test-driven design. I believe in giving back to the ecosystem, which is why I actively contribute to fixing core issues in the Frappe framework.
+                        </p>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number gradient-text" id="stat-exp">3+</span>
+                            <span class="stat-label">Years of Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number gradient-text" id="stat-automation">60%+</span>
+                            <span class="stat-label">Manual Work Reduced</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number gradient-text" id="stat-sync">2%</span>
+                            <span class="stat-label">Sync Errors (down from 12%)</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number gradient-text" id="stat-perf">35%</span>
+                            <span class="stat-label">P95 API Speedup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <h2 class="section-title text-center">Professional <span class="gradient-text">Journey</span></h2>
+                
+                <div class="timeline">
+                    <!-- Arijentek Solutions Card -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <h3 class="role-title">Lead Software Engineer</h3>
+                                <span class="company-name">Arijentek Solutions</span>
+                                <span class="time-period">Dec 2025 – Present</span>
+                            </div>
+                            <p class="job-summary">
+                                Engineered comprehensive retail ERP platforms (Gold ERP) for the jewelry industry and developed robust core HRMS systems using the Frappe framework, Python, and modern responsive frontends.
+                            </p>
+                            <ul class="achievements-list">
+                                <li>
+                                    <strong>Unified Retail Management (Gold ERP):</strong> Architected and developed a comprehensive Unified Retail Management System (Gold ERP) for the jewelry industry using Frappe framework (Python/MariaDB) and a modern, responsive Vue.js 3 / Tailwind CSS frontend.
+                                </li>
+                                <li>
+                                    <strong>Specialized Jewelry Modules:</strong> Engineered specialized jewelry business modules from scratch, including custom workflows for Point of Sale (POS), Jewelry Appraisals, Repairs tracking, Memo & Layaway contracts, and complex Bill of Materials (BOM) for gemstone and metal manufacturing.
+                                </li>
+                                <li>
+                                    <strong>RBAC & Dashboards:</strong> Built robust Role-Based Access Control (RBAC) systems, ensuring secure, tier-specific Executive Dashboards that provided real-time analytics on revenue, workforce intelligence, and inventory audits.
+                                </li>
+                                <li>
+                                    <strong>Arijentek Core HRMS Application:</strong> Developed the Arijentek Core HRMS Application to streamline internal operations, implementing full-stack features for daily biometric/manual clock-in and clock-out tracking.
+                                </li>
+                                <li>
+                                    <strong>HR & Payroll Automation:</strong> Automated core HR and payroll processes by designing scalable modules for leave management, expense reimbursements, and automated salary slip generation, significantly reducing manual HR overhead.
+                                </li>
+                                <li>
+                                    <strong>CI/CD & Code Standards:</strong> Ensured high code quality and smooth deployments by utilizing Git, GitHub Actions for CI/CD, and enforcing strict linting standards using Prettier, ESLint, and Ruff.
+                                </li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>Frappe Framework</span>
+                                <span>Python</span>
+                                <span>MariaDB</span>
+                                <span>Vue.js 3</span>
+                                <span>Tailwind CSS</span>
+                                <span>Git</span>
+                                <span>GitHub Actions</span>
+                                <span>Ruff</span>
+                                <span>ESLint</span>
+                                <span>REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gravity Inc. Card -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <h3 class="role-title">Frappe Developer</h3>
+                                <span class="company-name">Gravity Inc. (E-commerce Operations)</span>
+                                <span class="time-period">2023 – Present</span>
+                            </div>
+                            <p class="job-summary">
+                                Architected and developed a custom e-commerce operations platform built on top of the Frappe Framework, functioning as the central ERP system for multi-channel sales.
+                            </p>
+                            <ul class="achievements-list">
+                                <li>
+                                    <strong>Multi-Channel API Integration:</strong> Engineered a robust integration layer connecting ERPNext with Shopify and Amazon SP-API. Reduced data sync failures from 12% to 2% by implementing idempotency, retry/backoff policies, and comprehensive logging.
+                                </li>
+                                <li>
+                                    <strong>Process Automation:</strong> Automated order fulfillment and payment reconciliation workflows using complex server-side Python scripts, saving over 60% of manual effort.
+                                </li>
+                                <li>
+                                    <strong>Performance Refactoring:</strong> Optimized slow endpoints with parameterized SQL queries and Redis caching, delivering a 35% improvement in P95 API response times.
+                                </li>
+                                <li>
+                                    <strong>Python CLI Data Tool:</strong> Built a custom Python command-line tool (utilizing Pandas and Requests) to parse, validate, and batch import large CSV datasets into ERPNext, reducing manual import overhead by 70%.
+                                </li>
+                                <li>
+                                    <strong>Custom Analytics:</strong> Designed dynamic Script Reports and Dashboard Charts in Frappe to enable real-time tracking of sales trends, inventory levels, and platform health.
+                                </li>
+                                <li>
+                                    <strong>CI/CD & DevOps:</strong> Maintained a Git-based Linux development stack, authored schema migration patches, and implemented unit test suites to raise code coverage close to 80%.
+                                </li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>Frappe</span>
+                                <span>ERPNext</span>
+                                <span>MariaDB</span>
+                                <span>Redis</span>
+                                <span>Shopify API</span>
+                                <span>Amazon SP-API</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Source Contributions Section -->
+        <section id="contributions" class="section contributions-section">
+            <div class="container">
+                <h2 class="section-title text-center">Open Source <span class="gradient-text">Contributions</span></h2>
+                <p class="section-desc text-center">I actively contribute fixes to the core <strong>Frappe Framework</strong> (v16) to improve reliability, stability, and desktop workspace layouts for thousands of developers and users worldwide.</p>
+
+                <div class="contributions-grid">
+                    <!-- Contribution Card 1: Frappe Core Issue #38252 -->
+                    <div class="glass-card contribution-card">
+                        <div class="contrib-badge">frappe / frappe</div>
+                        <h3 class="contrib-title">Desktop Workspace DuplicateEntryError</h3>
+                        <p class="contrib-description">
+                            Identified, analyzed, and resolved a critical <code>DuplicateEntryError</code> crash in Frappe Core that occurred when adding a Workspace Shortcut to the desktop multiple times, alongside fixing a broken user feedback notification.
+                        </p>
+                        <div class="contrib-details">
+                            <h4>Key Fixes Implemented:</h4>
+                            <ul>
+                                <li>Resolved root cause database constraints in <code>add_workspace_to_desktop()</code>.</li>
+                                <li>Fixed a broken, unresponsive success toast notification to restore visual feedback.</li>
+                                <li>Released and shipped upstream in Frappe framework version 16.20.</li>
+                            </ul>
+                        </div>
+                        <div class="contrib-links">
+                            <span class="branch-tag">
+                                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                Issue #38252
+                            </span>
+                            <div class="issues-tags">
+                                <a href="https://github.com/frappe/frappe/issues/38252" target="_blank" class="issue-link" rel="noopener">View Issue</a>
+                                <span class="pr-status-badge merged">Fixed in v16.20</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contribution Card 2: Frappe HRMS PR #3993 -->
+                    <div class="glass-card contribution-card">
+                        <div class="contrib-badge">frappe / hrms</div>
+                        <h3 class="contrib-title">Website User App Permissions</h3>
+                        <p class="contrib-description">
+                            Fixed an authentication and routing bug in the HRMS module where Website Users holding the Employee role were mistakenly redirected to the desk (<code>/desk/people</code>) resulting in 403 Forbidden errors.
+                        </p>
+                        <div class="contrib-details">
+                            <h4>Key Fixes Implemented:</h4>
+                            <ul>
+                                <li>Corrected <code>check_app_permission</code> to return <code>False</code> properly for Website Users.</li>
+                                <li>Blocked the HRMS application from showing up in the sidebar or visible apps list for restricted Website Users.</li>
+                                <li>Backported fixes across Frappe HRMS hotfix versions (v15-hotfix, v16-hotfix).</li>
+                            </ul>
+                        </div>
+                        <div class="contrib-links">
+                            <span class="branch-tag">
+                                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                PR #3993
+                            </span>
+                            <div class="issues-tags">
+                                <a href="https://github.com/frappe/hrms/pull/3993" target="_blank" class="issue-link" rel="noopener">View PR</a>
+                                <span class="pr-status-badge merged">Merged</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h2 class="section-title text-center">Technical <span class="gradient-text">Skills</span></h2>
+                
+                <div class="skills-tabs">
+                    <button class="tab-btn active" data-tab="all" id="tab-all">All Skills</button>
+                    <button class="tab-btn" data-tab="languages" id="tab-languages">Languages & Frameworks</button>
+                    <button class="tab-btn" data-tab="backend" id="tab-backend">Backend & DB</button>
+                    <button class="tab-btn" data-tab="tools" id="tab-tools">Tools & DevOps</button>
+                </div>
+
+                <div class="skills-grid-container" id="skills-grid">
+                    <!-- Langs -->
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">🐍</div>
+                        <h3 class="skill-name">Python</h3>
+                        <p class="skill-desc">Server-side scripts, automation scripts, integration logic, and APIs.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">⚡</div>
+                        <h3 class="skill-name">Frappe Framework</h3>
+                        <p class="skill-desc">DocTypes, Server & Client Scripts, Desk Workspaces, and API routing.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">📦</div>
+                        <h3 class="skill-name">ERPNext</h3>
+                        <p class="skill-desc">Customizations, custom print formats, and module-specific custom logic.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">JS</div>
+                        <h3 class="skill-name">JavaScript (ES6+)</h3>
+                        <p class="skill-desc">Client-side logic, Frappe UI custom scripts, AJAX, and API parsing.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">🟢</div>
+                        <h3 class="skill-name">Vue.js (Vue 3)</h3>
+                        <p class="skill-desc">Developing modern, responsive frontend modules and reactive web applications.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">🌊</div>
+                        <h3 class="skill-name">Tailwind CSS</h3>
+                        <p class="skill-desc">Utility-first styling, responsive layout grids, and neo-brutalist designs.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">🎨</div>
+                        <h3 class="skill-name">HTML5 / CSS3</h3>
+                        <p class="skill-desc">Semantic responsive markup, modern CSS layouts, and glassmorphism styling.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="languages">
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-name">Jinja</h3>
+                        <p class="skill-desc">Dynamic print format templating and custom report generation inside ERPNext.</p>
+                    </div>
+
+                    <!-- Backend / DB -->
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-icon">🔥</div>
+                        <h3 class="skill-name">Flask / FastAPI</h3>
+                        <p class="skill-desc">Building lightweight REST microservices, endpoints, and utilities.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-icon">💾</div>
+                        <h3 class="skill-name">MariaDB / MySQL</h3>
+                        <p class="skill-desc">Database structure optimizations, indexing, writing complex queries, and SQL parameters.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-icon">📐</div>
+                        <h3 class="skill-name">Database Design</h3>
+                        <p class="skill-desc">Relational schema design, normalization, constraints, modeling transactions, and performance profiling.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-icon">🐘</div>
+                        <h3 class="skill-name">PostgreSQL</h3>
+                        <p class="skill-desc">Relational database design, backups, indexing, and complex queries.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-icon">⏱️</div>
+                        <h3 class="skill-name">Celery & Redis</h3>
+                        <p class="skill-desc">Asynchronous task processing, worker queues, and caching for API optimization.</p>
+                    </div>
+
+                    <!-- Tools / DevOps -->
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-icon">🐙</div>
+                        <h3 class="skill-name">Git & GitHub</h3>
+                        <p class="skill-desc">Branch management, pull request contributions, code reviews, and forks.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-icon">🐧</div>
+                        <h3 class="skill-name">Linux / Unix</h3>
+                        <p class="skill-desc">CLI tools, shell scripting, cron automation, environment setup, and system administration.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-icon">🐳</div>
+                        <h3 class="skill-name">Docker</h3>
+                        <p class="skill-desc">Containerizing environments for reproducible development stacks and local setups.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-icon">📡</div>
+                        <h3 class="skill-name">Postman & REST APIs</h3>
+                        <p class="skill-desc">API design, endpoint testing, integrations testing, mock servers, and payload documentation.</p>
+                    </div>
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-icon">▲</div>
+                        <h3 class="skill-name">Vercel</h3>
+                        <p class="skill-desc">Deployment and hosting of static landing pages, portfolios, and backend microservices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal Section -->
+        <section id="terminal-section" class="section terminal-section">
+            <div class="container">
+                <h2 class="section-title text-center">Interactive <span class="gradient-text">Console</span></h2>
+                <p class="section-desc text-center">Interact with a simulated environment of Akshay's workspace. Type standard terminal commands or try <code>help</code>.</p>
+                
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="term-btn close"></span>
+                            <span class="term-btn minimize"></span>
+                            <span class="term-btn expand"></span>
+                        </div>
+                        <div class="terminal-title">akshay@arijentek-dev: ~/portfolio</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-line">Welcome to Akshay's Interactive Developer Console (v1.0.0).</div>
+                        <div class="terminal-line">Type <span class="highlight">help</span> to view all available commands.</div>
+                        <div class="terminal-line">&nbsp;</div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt"><span class="prompt-long">akshay@arijentek-dev:~/portfolio</span><span class="prompt-short">akshay</span>$</span>
+                            <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title text-center">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-desc text-center">Interested in working together or want to chat about Frappe development, APIs, or open-source? Let's connect!</p>
+                
+                <div class="contact-grid">
+                    <!-- Info Card -->
+                    <div class="glass-card contact-info-card">
+                        <h3 class="card-subtitle">Contact Information</h3>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="info-content">
+                                    <span class="info-label">Email</span>
+                                    <div class="copy-email-container">
+                                        <span class="info-value" id="email-text">akshayy.anill@gmail.com</span>
+                                        <button class="copy-btn" id="copy-email-btn" aria-label="Copy email to clipboard">
+                                            <span class="copy-tooltip">Copy</span>
+                                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div class="info-content">
+                                    <span class="info-label">Phone</span>
+                                    <span class="info-value">+91 79045 45352</span>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div class="info-content">
+                                    <span class="info-label">Location</span>
+                                    <span class="info-value">Coimbatore, Tamil Nadu, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/Akshay-Arijentek" target="_blank" rel="noopener" aria-label="GitHub Profile">
+                                <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+                                <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="glass-card contact-form-card">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" required placeholder="Project Inquiry / Job Opportunity">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" required placeholder="Hi Akshay, I would like to discuss..." rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">Send Message</button>
+                        </form>
+                        <div id="form-feedback" class="form-feedback hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container text-center">
+            <p>&copy; 2026 Akshay Anilkumar. Built with HTML, CSS, and Vanilla JavaScript. Deployed on Vercel.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Cyber Actions -->
+    <div class="floating-cyber-actions">
+        <button id="zerog-toggle" class="btn-zerog" aria-label="Toggle Zero-G Mode">
+            🚀 ZERO-G MODE
+        </button>
+    </div>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+</html>

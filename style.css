@@ -1,0 +1,1795 @@
+/* =========================================================================
+   Premium Mobile-First Design System for Akshay Anilkumar
+   Themes: Cyber-Obsidian (Dark) & Minimalist Paper-Terminal (Light)
+   ========================================================================= */
+
+:root {
+    /* Cyber-Obsidian Theme (Dark) */
+    --bg-primary: #0f0a08; /* Deep warm charcoal */
+    --bg-secondary: #1a110e;
+    --grid-color: rgba(255, 140, 0, 0.05);
+    --border-color: rgba(255, 140, 0, 0.1);
+    --border-hover: #ff6600; /* Neon Orange */
+    --accent-primary: #ff8c00; /* Dark Orange */
+    --accent-glow: rgba(255, 102, 0, 0.35);
+    --accent-cyan: #ffb700; /* Golden Yellow */
+    --accent-pink: #ff4500; /* Red-Orange */
+    --accent-green: #00d26a; /* Keep green for success/availability */
+    --accent-subtitle: var(--accent-cyan);
+    --text-main: #fcf6f2;
+    --text-muted: #c4b5ac;
+    --card-bg: rgba(26, 17, 14, 0.65);
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+    --btn-primary-bg: linear-gradient(135deg, #ff6600, #ffb700);
+    --btn-primary-text: #1a110e;
+    --btn-secondary-bg: rgba(255, 140, 0, 0.05);
+    --btn-hover-bg: rgba(255, 255, 255, 0.05);
+    --nav-bg: rgba(10, 7, 20, 0.85);
+    --input-bg: rgba(10, 7, 20, 0.45); /* Cyber terminal input background */
+
+    --font-sans: 'Space Grotesk', -apple-system, sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --transition-speed: 0.15s;
+    --max-width: 1200px;
+}
+
+body.light-theme {
+    /* Funky Cyber-Citrus Theme (Light) - White, Orange & Yellow Sunset Mix */
+    --bg-primary: #fffdf9; /* Soft warm white background */
+    --bg-secondary: #fff5e0; /* Pastel orange-yellow tint background */
+    --grid-color: rgba(255, 85, 0, 0.04); /* Soft orange grid lines */
+    --border-color: rgba(255, 85, 0, 0.15); /* Tangerine orange border */
+    --border-hover: #ff5500; /* Vibrant electric orange hover */
+    --accent-primary: #ff5500; /* Electric Orange */
+    --accent-glow: rgba(255, 85, 0, 0.12);
+    --accent-cyan: #e6b800; /* Sunny Gold Yellow */
+    --accent-pink: #ff007f; /* Neon Magenta Pink */
+    --accent-green: #d48000; /* Amber Orange */
+    --accent-subtitle: var(--accent-primary); /* Subtitle matching primary */
+    --text-main: #1b1614; /* Deep charcoal-brown for premium readability */
+    --text-muted: #6b5e59; /* Warm brown-grey for muted descriptions */
+    --card-bg: #ffffff; /* Clean solid white card papers */
+    --card-shadow: 0 12px 35px -12px rgba(255, 85, 0, 0.08); /* Tangerine-tinted drop shadow */
+    --btn-primary-bg: linear-gradient(135deg, #ff8c00, #ff5500); /* Orange-sunset gradient */
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: #ffffff;
+    --btn-hover-bg: rgba(255, 85, 0, 0.06); /* Soft orange hover background */
+    --nav-bg: rgba(255, 255, 255, 0.92);
+    --input-bg: #fffdf9; /* Soft inputs match white paper cards */
+}
+
+/* =========================================================================
+   1. Base Reset & Layout (Mobile-First Defaults)
+   ========================================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    background-image: radial-gradient(var(--grid-color) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Mobile-First Container Padding (Generous Margin Frame) */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-inline: 1.25rem; /* Mobile side padding */
+}
+
+/* Glassmorphic & Premium Card Styles */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.glass-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 35px -12px rgba(99, 102, 241, 0.15);
+}
+
+body.light-theme .glass-card:hover {
+    box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.12);
+}
+
+.timeline-content {
+    padding: 1.8rem;
+}
+
+.contact-info-card, .contact-form-card {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile-First Section Padding & Vertical Spacing */
+.section {
+    padding: 4.5rem 0 6.5rem; /* Consistent padding with bottom clearance for Zero-G button */
+    min-height: auto; /* Flow naturally on mobile screens */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================================
+   2. Typography (Mobile-First)
+   ========================================================================= */
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-primary) 50%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+body.light-theme .gradient-text {
+    background: linear-gradient(135deg, #ff007f 0%, #ff5500 50%, #e6b800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 6vw, 2.4rem); /* Fluid section title sizes */
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 15%;
+    width: 70%;
+    height: 3px;
+    background: var(--accent-primary);
+}
+
+.section-desc {
+    max-width: 650px;
+    margin: 1rem auto 2.5rem;
+    color: var(--text-muted);
+    font-size: 1.05rem; /* Better typography scaling */
+    line-height: 1.7;
+}
+
+/* =========================================================================
+   3. Mobile-First Navigation
+   ========================================================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0; /* Controlled by header-container */
+    z-index: 1000;
+    transition: all var(--transition-speed) ease;
+}
+
+.header.scrolled {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border-hover);
+}
+body.light-theme .header.scrolled {
+    box-shadow: 0 10px 25px -12px rgba(0, 0, 0, 0.08);
+}
+
+.header-container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.8rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding var(--transition-speed) ease;
+}
+
+.header.scrolled .header-container {
+    padding-block: 0.65rem; /* Shrinks on scroll for premium feedback */
+}
+
+.logo a {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+}
+
+.logo-accent {
+    color: var(--accent-primary);
+}
+
+/* Mobile-First Drawer Menu (Hidden offscreen right) */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 6.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.35);
+    margin: 0;
+    z-index: 999;
+}
+
+.navbar.open {
+    right: 0; /* Slide drawer in */
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1.8rem;
+    width: 100%;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-speed) ease;
+    padding: 0.8rem 1rem; /* Meets mobile touch target padding standards */
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+body.light-theme .nav-link:hover, body.light-theme .nav-link.active {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: auto;
+    z-index: 1001;
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 48px; /* Touch target standard */
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.theme-toggle-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Hamburger toggle menu button for mobile */
+.nav-toggle {
+    display: flex;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 48px; /* Mobile touch target standard */
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1002;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 2px;
+    background: var(--text-main);
+    transition: background var(--transition-speed) ease;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: var(--text-main);
+    transition: transform var(--transition-speed) ease, top var(--transition-speed) ease;
+}
+
+.hamburger::before { top: -6px; }
+.hamburger::after { top: 6px; }
+
+.nav-toggle.open .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle.open .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* =========================================================================
+   4. Buttons & Touch Targets (Mobile standard)
+   ========================================================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem; /* Premium balanced padding */
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem; /* Prevents button text from looking too heavy */
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    min-height: 48px; /* Touch target standard compliance */
+    transition: all var(--transition-speed) cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--accent-primary); /* Use theme accent color for better hierarchy in citrus theme */
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    background: var(--btn-hover-bg);
+}
+
+.btn-tertiary {
+    background: transparent;
+    color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+.btn-tertiary:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-pink);
+    background: var(--btn-hover-bg);
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2px;
+}
+
+/* Blinking carets for terminal-like text cursor animations */
+.cursor {
+    animation: blink-caret 0.75s step-end infinite;
+    color: var(--accent-cyan);
+    margin-left: 3px;
+    font-weight: 700;
+}
+@keyframes blink-caret {
+    from, to { color: transparent }
+    50% { color: var(--accent-cyan) }
+}
+body.light-theme .cursor {
+    color: var(--accent-primary);
+    animation: blink-caret-light 0.75s step-end infinite;
+}
+@keyframes blink-caret-light {
+    from, to { color: transparent }
+    50% { color: var(--accent-primary) }
+}
+
+/* =========================================================================
+   5. Hero Section (Mobile Stacking & Sizing)
+   ========================================================================= */
+.hero-section {
+    padding-top: 7rem;
+}
+
+/* Mobile Stacks avatar above content, text aligned center */
+.hero-container {
+    display: flex;
+    flex-direction: column-reverse; /* Avatar on top, content below */
+    gap: 2rem; /* Clean vertical rhythm spacing */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.glow-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1.1rem;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid var(--accent-green);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin-bottom: 1.2rem; /* Clean vertical rhythm spacing */
+    font-family: var(--font-mono);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 8vw, 2.4rem); /* Fluid typographic scaling */
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.8rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: center; /* Center on mobile viewports */
+}
+
+.hero-subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 4.5vw, 1.2rem); /* Fluid subtitle prevents wraps/overflows */
+    font-weight: 600;
+    color: var(--accent-subtitle); /* Responsive color to ensure high-contrast readability */
+    margin-bottom: 1.4rem;
+    min-height: 2.2rem;
+    text-align: center; /* Center on mobile viewports */
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Stacks hero action buttons vertically on mobile for touch target spacing */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: stretch; /* Full-width buttons on mobile */
+}
+
+.hero-buttons .btn {
+    width: 100%; /* Full-width block buttons on mobile */
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width so avatar centers within the flex column */
+    margin-bottom: 0;
+}
+
+.avatar-container {
+    position: relative;
+    width: 180px; /* Compact mobile avatar */
+    height: 180px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-primary));
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-primary);
+    background-color: var(--bg-secondary);
+}
+
+.avatar-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(12px);
+}
+
+.scroll-indicator {
+    display: none; /* Hide scrolling cues on tiny mobile viewports to prevent clutter */
+}
+
+/* =========================================================================
+   6. About Section (Mobile-First)
+   ========================================================================= */
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.about-text-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.8rem; /* Compact card margins */
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.about-text-card:hover {
+    border-color: var(--border-hover);
+}
+
+.card-subtitle {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+}
+
+.about-p {
+    font-size: 1.05rem; /* Match base readable body sizing */
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+.about-p strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.about-p:last-child {
+    margin-bottom: 0;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.stat-card:hover {
+    border-color: var(--border-hover);
+}
+
+.stat-number {
+    font-family: var(--font-mono);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent-primary);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* =========================================================================
+   7. Experience & Timeline (Mobile-First)
+   ========================================================================= */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 10px; /* Aligned far left */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.8rem;
+    padding-left: 30px; /* Snugger padding for narrow layouts */
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--bg-primary);
+    border: 3px solid var(--accent-primary);
+    border-radius: 50%;
+    left: 6px;
+    top: 28px;
+    z-index: 2;
+}
+
+.timeline-header {
+    display: flex;
+    flex-direction: column; /* Stacks title and period on mobile */
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.0rem;
+}
+
+.role-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.company-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-top: 0.1rem;
+}
+
+.time-period {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-main);
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    align-self: flex-start;
+}
+
+.job-summary {
+    font-size: 1.0rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 1.0rem;
+    font-weight: 600;
+}
+
+.achievements-list {
+    list-style: none;
+    margin-bottom: 1.2rem;
+}
+
+.achievements-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.96rem; /* Clean typography scaling */
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.achievements-list li::before {
+    content: '//';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.achievements-list li strong {
+    color: var(--text-main);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tech-tags span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: var(--bg-secondary);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+}
+
+/* =========================================================================
+   8. Open Source Contributions (Mobile-First)
+   ========================================================================= */
+.contributions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contribution-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.8rem; /* Compact desktop sizing down */
+}
+
+.contrib-badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    margin-bottom: 0.8rem;
+}
+
+.contrib-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.contrib-description {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 1.0rem;
+}
+
+.contrib-details {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.0rem;
+    border: 1px solid var(--border-color);
+}
+
+.contrib-details h4 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+body.light-theme .contrib-details h4 {
+    color: var(--accent-primary);
+}
+
+.contrib-details ul {
+    list-style-type: none;
+}
+
+.contrib-details li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+
+.contrib-details li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent-pink);
+    font-family: var(--font-mono);
+    font-weight: bold;
+}
+
+.contrib-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+}
+
+.branch-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.issues-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.issue-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.pr-status-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* =========================================================================
+   9. Skills Section (Mobile-First)
+   ========================================================================= */
+.skills-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem; /* Increased spacing */
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.75rem 1.3rem; /* Meets mobile touch target standards */
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    min-height: 48px; /* Strict mobile target compliance */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.tab-btn.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #fff;
+}
+
+.skills-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.skill-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.skill-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+
+/* =========================================================================
+   10. Terminal Section (Mobile-First)
+   ========================================================================= */
+.terminal-container {
+    background: #090615;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    width: 100%;
+}
+
+body.light-theme .terminal-container {
+    background: #1b1614; /* Warm dark chocolate charcoal background */
+    border-color: rgba(255, 85, 0, 0.2);
+}
+
+body.light-theme .terminal-header {
+    background: #231c19; /* Darker warm chocolate charcoal header */
+    border-bottom: 1px solid rgba(255, 85, 0, 0.12);
+}
+
+.terminal-header {
+    background: #120e26;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.term-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.term-btn.close { background-color: #ff5f56; }
+.term-btn.minimize { background-color: #ffbd2e; }
+.term-btn.expand { background-color: #27c93f; }
+
+.terminal-title {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 40px;
+}
+
+.terminal-body {
+    padding: 1.2rem;
+    height: 320px;
+    overflow-y: auto;
+    color: var(--accent-cyan);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-line {
+    word-break: break-all;
+    white-space: pre-wrap;
+    margin-bottom: 0.3rem;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+}
+
+.terminal-prompt {
+    color: var(--accent-green);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.prompt-short {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .prompt-long {
+        display: none;
+    }
+    .prompt-short {
+        display: inline;
+    }
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* =========================================================================
+   11. Contact Section (Mobile-First)
+   ========================================================================= */
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-icon {
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--accent-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+.info-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    word-break: break-all; /* Allow long emails to wrap on very small screens */
+}
+
+.copy-email-container {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap; /* Prevent the copy button from being pushed out of the card */
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.6rem; /* Substantially larger tap target */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem; /* Spaced out slightly more */
+}
+
+.social-links a {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    width: 48px; /* Compliant 48px touch target */
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--border-hover);
+    background: var(--card-bg);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    background: var(--bg-secondary);
+}
+
+.footer-bottom p {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.floating-cyber-actions {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+}
+
+.btn-zerog {
+    background: var(--bg-secondary);
+    color: var(--accent-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1.5rem; /* Expanded button padding */
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    border-radius: 30px;
+    min-height: 48px; /* Standardized touch target height */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+}
+
+/* =========================================================================
+   12. Tablet Layout Overrides (width >= 768px)
+   ========================================================================= */
+@media (min-width: 768px) {
+    .container {
+        padding-inline: 2.5rem;
+    }
+
+    .section {
+        padding: 7.5rem 0 4rem;
+        min-height: 100vh; /* Set sections back to full heights on desktop viewports */
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-inline: auto;
+    }
+
+    .section-title::after {
+        left: 20%;
+        width: 60%;
+    }
+
+    .section-desc {
+        font-size: 1.05rem;
+        margin-bottom: 3.5rem;
+    }
+
+    /* Horizontal grid structures */
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3.5rem;
+        text-align: left;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+        text-align: left; /* Restores left alignment */
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+        text-align: left; /* Restores left alignment */
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        max-width: 580px;
+        margin-inline: 0; /* Left align description */
+        text-align: left; /* Restores left alignment */
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        width: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+
+    .hero-buttons .btn {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+
+    .avatar-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .scroll-indicator {
+        display: flex;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 3.5rem;
+    }
+
+    .about-text-card {
+        padding: 2.5rem;
+    }
+
+    .about-stats {
+        gap: 1.2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.8rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-dot {
+        left: 14px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .timeline-item {
+        padding-left: 55px;
+    }
+
+    .timeline-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .time-period {
+        align-self: center;
+    }
+
+    .contributions-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .skills-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .terminal-body {
+        height: 380px;
+        padding: 1.5rem 1.8rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 3rem;
+    }
+
+    .floating-cyber-actions {
+        bottom: 2rem;
+        right: 2rem;
+    }
+
+    .btn-zerog {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+        min-height: 48px;
+    }
+}
+
+/* =========================================================================
+   13. Desktop Layout Overrides (width >= 1024px)
+   ========================================================================= */
+@media (min-width: 1024px) {
+    .container {
+        padding-inline: 4%;
+    }
+
+    .section {
+        padding: 9rem 0 5rem;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+    }
+
+    /* Spacious top navigation capsule structure on desktop */
+    .header {
+        padding: 0;
+    }
+
+    .header-container {
+        padding-inline: 4%;
+        padding-block: 1.3rem;
+    }
+
+    .header.scrolled .header-container {
+        padding-block: 0.85rem;
+    }
+
+    .navbar {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        z-index: auto;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        gap: 2.2rem;
+        width: auto;
+        align-items: center;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        width: auto;
+        display: inline;
+        position: relative;
+        padding: 0.4rem 0.8rem; /* Fit inline horizontal spacing */
+        background: transparent !important;
+    }
+
+    .nav-toggle {
+        display: none; /* Hide drawer trigger on desktop */
+    }
+
+    .hero-container {
+        gap: 5rem;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .avatar-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-grid {
+        gap: 5rem;
+    }
+
+    .skills-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+/* =========================================================================
+   14. Small Device Overrides (width <= 380px)
+   ========================================================================= */
+@media (max-width: 380px) {
+    .container {
+        padding-inline: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .avatar-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .glow-tag {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* =========================================================================
+   15. Utility & Missing Classes
+   ========================================================================= */
+.hidden {
+    display: none !important;
+}
+
+.highlight {
+    color: var(--accent-cyan);
+    font-weight: 700;
+}
+
+.accent {
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+body.light-theme .highlight {
+    color: var(--accent-primary);
+}
+
+/* =========================================================================
+   16. Keyframes & Animations
+   ========================================================================= */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* Glitch screen effect */
+.glitch-active {
+    animation: glitch-shake 0.15s infinite;
+}
+
+@keyframes glitch-shake {
+    0% { transform: translate(0); filter: hue-rotate(0deg); }
+    20% { transform: translate(-3px, 2px); filter: hue-rotate(90deg); }
+    40% { transform: translate(3px, -2px); filter: hue-rotate(180deg); }
+    60% { transform: translate(-2px, -3px); filter: hue-rotate(270deg); }
+    80% { transform: translate(2px, 3px); filter: hue-rotate(360deg); }
+    100% { transform: translate(0); filter: hue-rotate(0deg); }
+}
+
+/* Zero-G floating element base */
+.floating-element {
+    transition: none;
+    will-change: transform;
+}
+
+/* =========================================================================
+   17. Light Theme Overrides for Premium Feel
+   ========================================================================= */
+body.light-theme .social-links a:hover {
+    border-color: var(--border-hover);
+    color: var(--accent-primary);
+    background: var(--btn-hover-bg);
+}
+
+body.light-theme .issue-link:hover {
+    border-color: var(--border-hover);
+    background: var(--btn-hover-bg);
+}
+
+body.light-theme .tech-tags span {
+    background: var(--bg-secondary);
+    border-color: rgba(255, 85, 0, 0.12);
+}
+
+body.light-theme .tab-btn {
+    background: #ffffff;
+}
+
+body.light-theme .tab-btn.active {
+    background: linear-gradient(135deg, #ff8c00, #ff5500);
+    border-color: #ff5500;
+}
+
+body.light-theme .stat-card {
+    background: #ffffff;
+}
+
+body.light-theme .btn-zerog {
+    background: #ffffff;
+    color: var(--accent-primary);
+    border-color: rgba(255, 85, 0, 0.2);
+}
+
+body.light-theme .btn-zerog:hover {
+    border-color: var(--border-hover);
+    background: var(--btn-hover-bg);
+}
+
+body.light-theme .avatar-container {
+    background: linear-gradient(135deg, #ff007f, #ff5500);
+}
+
+body.light-theme .glow-tag {
+    background: rgba(255, 85, 0, 0.06);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+body.light-theme .pulse-dot {
+    background-color: var(--accent-primary);
+}
+
+body.light-theme .nav-link.active {
+    color: var(--accent-primary);
+}
+
+/* Form feedback */
+.form-feedback {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+/* Copy tooltip */
+.copy-tooltip {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Social icon sizing */
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Icon-sm sizing */
+.icon-sm {
+    width: 14px;
+    height: 14px;
+}
+
+/* Force mobile widths and centering */
+@media (max-width: 768px) {
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        padding-inline: 1.5rem !important;
+        overflow-x: hidden;
+    }
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        gap: 1.5rem !important;
+    }
+    .hero-buttons {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+    }
+    .hero-buttons .btn {
+        width: 100% !important;
+    }
+    .hero-title, .hero-subtitle, .hero-description {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .section-title {
+        font-size: clamp(1rem, 5.5vw, 1.5rem) !important;
+        letter-spacing: -0.04em !important;
+        width: 100% !important;
+        text-align: center !important;
+        display: block !important;
+    }
+    .skills-grid-container {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+    .skill-card {
+        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .timeline-content {
+        width: 100% !important;
+    }
+}
